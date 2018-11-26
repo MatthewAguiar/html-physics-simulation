@@ -10,7 +10,7 @@ const MOUSE = {
   y: CANVAS.height / 2
 };
 
-const COLORS = ["#2185C5", "#7ECEFD", "FFF6E5", "FF7F66"];
+const COLORS = ["#2185C5", "#7ECEFD", "#FF7F66"];
 
 document.addEventListener("mousemove", event => {
   MOUSE.x = event.clientX;

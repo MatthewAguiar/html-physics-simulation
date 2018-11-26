@@ -12,12 +12,12 @@ function init()
 {
   particles = [];
 
-  for(let i = 0; i < 4; i++)
+  for(let i = 0; i < 150; i++)
   {
-    const RADIUS = 80;
+    const RADIUS = 15;
     let x = random_int(RADIUS, CANVAS.width - RADIUS);
     let y = random_int(RADIUS, CANVAS.height - RADIUS);
-    const COLOR = "blue";
+    const COLOR = random_color(COLORS);
 
     if(i !== 0)
     {
