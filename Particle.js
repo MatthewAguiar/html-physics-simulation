@@ -1,6 +1,6 @@
 class Particle
 {
-  constructor(x, y, radius, color)
+  constructor(x, y, mass, radius, color)
   {
     this.x = x;
     this.y = y;
@@ -43,11 +43,11 @@ class Particle
 
     if(get_distance(MOUSE.x, MOUSE.y, this.x, this.y) < 145 && this.opacity < 0.4)
     {
-      this.opacity += 0.02;
+      this.opacity += 0.03;
     }
     else if(this.opacity > 0)
     {
-      this.opacity -= 0.02;
+      this.opacity -= 0.03;
       this.opacity = Math.max(0, this.opacity);
     }
 

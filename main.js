@@ -12,12 +12,13 @@ function init()
 {
   particles = [];
 
-  for(let i = 0; i < 150; i++)
+  for(let i = 0; i < 200; i++)
   {
     const RADIUS = 15;
     let x = random_int(RADIUS, CANVAS.width - RADIUS);
     let y = random_int(RADIUS, CANVAS.height - RADIUS);
     const COLOR = random_color(COLORS);
+    const MASS = 1;
 
     if(i !== 0)
     {
@@ -33,7 +34,7 @@ function init()
       }
     }
 
-    particles.push(new Particle(x, y, RADIUS, COLOR));
+    particles.push(new Particle(x, y, MASS, RADIUS, COLOR));
   }
 }
 
