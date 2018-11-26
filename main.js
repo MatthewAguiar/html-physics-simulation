@@ -2,9 +2,9 @@
 function animate()
 {
   requestAnimationFrame(animate);
-  CANVAS_CONTEXT.clearRect(0, 0, CANVAS_CONTEXT.width, CANVAS_CONTEXT.height);
+  CANVAS_CONTEXT.clearRect(0, 0, CANVAS.width, CANVAS.height);
   particles.forEach(particle => {
-    particle.update();
+    particle.update(particles);
   });
 }
 
@@ -14,9 +14,9 @@ function init()
 
   for(let i = 0; i < 4; i++)
   {
-    let x = Math.random() * CANVAS.width;
-    let y = Math.random() * CANVAS.height;
-    const RADIUS = 100;
+    const RADIUS = 80;
+    let x = random_int(RADIUS, CANVAS.width - RADIUS);
+    let y = random_int(RADIUS, CANVAS.height - RADIUS);
     const COLOR = "blue";
 
     if(i !== 0)
@@ -25,8 +25,8 @@ function init()
       {
         if(get_distance(x, y, particles[j].x, particles[j].y) - RADIUS * 2 < 0)
         {
-          x = Math.random() * CANVAS.width;
-          y = Math.random() * CANVAS.height;
+          x = random_int(RADIUS, CANVAS.width - RADIUS);
+          y = random_int(RADIUS, CANVAS.height - RADIUS);
 
           j = -1;
         }

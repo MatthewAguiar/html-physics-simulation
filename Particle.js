@@ -4,13 +4,33 @@ class Particle
   {
     this.x = x;
     this.y = y;
+    this.velocity = {
+      x: Math.random() - 0.5,
+      y: Math.random() - 0.5
+    };
     this.radius = radius;
     this.color = color;
   }
 
-  update()
+  update(particles)
   {
     this.draw();
+
+    for(let i = 0; i < particles.length; i++)
+    {
+      if(this === particles[i])
+      {
+        continue;
+      }
+
+      if(get_distance(this.x, this.y, particles[i].x, particles[i].y) - (this.radius + particles[i].radius) < 0)
+      {
+
+      }
+    }
+
+    this.x += this.velocity.x;
+    this.y += this.velocity.y;
   }
 
   draw()
